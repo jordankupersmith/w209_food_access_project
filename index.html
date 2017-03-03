@@ -4,17 +4,56 @@
 	<link rel="stylesheet" href="style.css">
 </head>
 <body>
-	<p class="title">Cencus Tract National Map 500k</p>
+	<p class="title">Cencus Tract US 500k</p>
 
 	<script type="text/javascript">
 		var w = 2000;
 		var h = 1000;
-		var s = 3000; // scale of the map. 1000 is actual size.
+		var s = 1000; // scale of the map. 1000 is actual size.
 		
 		var svg = d3.select("body")
 				.append("svg")
 				.attr("width", w)
 				.attr("height",h);
+
+		var pop2010 = {};
+
+		function returnColor(d){
+			if(d<1000){return "black";}
+			if(d<2000){return "steelblue";}
+			if(d<3000){return "yellow";}
+			if(d<4000){return "green";}
+			if(d<5000){return "blue";}
+			if(d<6000){return "red";}
+			if(d<7000){return "black";}
+			if(d<8000){return "steelblue";}
+			if(d<9000){return "yellow";}
+			return "grey";
+		}
+
+		//var colorsPOP2010 = d3.scaleQuantize()
+		//var colorsPOP2010 = d3.scaleLinear().range(["yellow","green"]);
+		var colorsPOP2010 = d3.scaleLinear().interpolate(d3.interpolateHcl)
+				      .range([d3.rgb("#007AFF"), d3.rgb('#FFF500')]);
+				//.range(["rgb(237,248,233)", "rgb(186,228,179)","rgb(116,196,118)", "rgb(49,163,84)","rgb(0,109,44)"]);
+				//.range(["yello", "green", "blue", "red"]);
+		colorsPOP2010.domain([0, 9999]);
+
+		
+
+		//alert(colorsPOP2010[0]);
+		//alert(colorsPOP2010[6615]);
+
+		d3.csv("usda/FoodAccess2015.csv", function(data) {
+			data.map(function(d) {
+				//return { "1400000US" + d["CensusTnact"]: +d["POP2010"] };
+				pop2010["1400000US" + d["CensusTnact"]] = +d["POP2010"];
+			});
+			//alert(d3.min(data, function(d){return d["POP2010"];}));
+			//alert(d3.max(data, function(d){return d["POP2010"];}));
+			colorsPOP2010.domain([d3.min(data, function(d){return d["POP2010"];}), d3.max(data, function(d){return d["POP2010"];})]);
+		});
+
 		var path = d3.geoPath().
 				projection(d3.geoAlbersUsa().scale([s])); // Without projection there will be no display.
 		d3.json("census_tracts_2010/us.json", function(json){
@@ -22,7 +61,22 @@
 				.data(json.features)
 				.enter()
 				.append("path")
-				.attr("d",path);
+				.attr("d",path)
+				.style("fill", function(d) {
+					var pop = pop2010[d["properties"]["GEO_ID"]];
+					//alert(d["properties"]);
+					//alert(d["properties"]["GEO_ID"]);
+					//alert(pop);
+					
+					//alert(colorsPOP2010[parseFloat(pop)]);
+					if(pop){
+						//return colorsPOP2010[parseFloat(pop)];
+						//if(pop>5000){return "green"};
+						return returnColor(pop);
+					} else {
+						return "#ccc";
+					}
+				});
 			});
 	</script>
 </body>
