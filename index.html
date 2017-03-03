@@ -31,26 +31,14 @@
 			return "grey";
 		}
 
-		//var colorsPOP2010 = d3.scaleQuantize()
-		//var colorsPOP2010 = d3.scaleLinear().range(["yellow","green"]);
 		var colorsPOP2010 = d3.scaleLinear().interpolate(d3.interpolateHcl)
 				      .range([d3.rgb("#007AFF"), d3.rgb('#FFF500')]);
-				//.range(["rgb(237,248,233)", "rgb(186,228,179)","rgb(116,196,118)", "rgb(49,163,84)","rgb(0,109,44)"]);
-				//.range(["yello", "green", "blue", "red"]);
 		colorsPOP2010.domain([0, 9999]);
-
-		
-
-		//alert(colorsPOP2010[0]);
-		//alert(colorsPOP2010[6615]);
 
 		d3.csv("usda/FoodAccess2015.csv", function(data) {
 			data.map(function(d) {
-				//return { "1400000US" + d["CensusTnact"]: +d["POP2010"] };
 				pop2010["1400000US" + d["CensusTnact"]] = +d["POP2010"];
 			});
-			//alert(d3.min(data, function(d){return d["POP2010"];}));
-			//alert(d3.max(data, function(d){return d["POP2010"];}));
 			colorsPOP2010.domain([d3.min(data, function(d){return d["POP2010"];}), d3.max(data, function(d){return d["POP2010"];})]);
 		});
 
@@ -64,14 +52,7 @@
 				.attr("d",path)
 				.style("fill", function(d) {
 					var pop = pop2010[d["properties"]["GEO_ID"]];
-					//alert(d["properties"]);
-					//alert(d["properties"]["GEO_ID"]);
-					//alert(pop);
-					
-					//alert(colorsPOP2010[parseFloat(pop)]);
 					if(pop){
-						//return colorsPOP2010[parseFloat(pop)];
-						//if(pop>5000){return "green"};
 						return returnColor(pop);
 					} else {
 						return "#ccc";
