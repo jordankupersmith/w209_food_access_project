@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html>
+<head>
+	
+	<title>W209 USDA Food Access</title>
+
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<style type="text/css">
+section {
+  width: 50%;
+  margin: 0 auto;
+}
+
+h2, h3 {
+  text-align: center;
+}
+
+h2 {
+  font-family: Futura, Helvetica, sans-serif;
+  color: white;
+}
+
+/* You may not have these fonts. try a nice script font */
+
+h3 {
+  font-family: 'Satisfy', 'Rock Salt', Baskerville; 
+}
+
+p {
+  font-family: Baskerville, serif;
+}
+
+h2 span.one, h2 span.two  {
+  position: relative;
+  display: block;
+  width: 50%;
+  margin: .25em 25%;
+  background: orange;
+}
+
+span.one:after, span.two:before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  top: 0;
+  background: orange;
+  width: 9999px
+}
+
+span.one:after {
+  left: 100%;
+}
+
+span.two:before {
+  right: 100%; 
+}
+
+span.one:before, span.two:after {
+  content: "";
+  position: absolute;
+  display: block;
+  border: 0.7em solid orange;
+}
+
+span.one:before {
+  left: -1em;
+  border-right-width: 0.7em;
+  border-left-color: transparent;
+}
+
+span.two:after {
+  right: -1em;
+  top: 0;
+  border-left-width: 0.7em;
+  border-right-color: transparent;
+  
+}
+
+ </style>
+</head>
+<body>
+
+<section>
+
+  <h2><span class="one">W209 Section 3 - Final Project</span> <span class="two">Atlas for USDA Food Access Indicators</span></h2>
+  
+  <h3>Jordan Kupersmith, Yuhang Zhao and Ravneet Ghuman</h3>
+  
+  <hr />
+  
+  <p>Through Food Access Research Atlas, the United States Department of Agriculture (USDA) provides a spatial view of food access data for low-income and other census tracts with various indicators based on income, ethnicity, age groups etc for census tracts, using different measures of supermarket accessibility. Aggregated data is available in the public domain.
+In it's current state, the Atlas is limited to key features exposed by the USDA, so our project concept is twofold - the first part is to extend the functionality provided by the Atlas and make it easier to compare and contrast various features that are already available in the dataset but not easy to interpret or not available in the Atlas and the second part is to overlay existing data with external data in the education and health domain to visualize the relationships between these new datasets in conjunction with the existing data for various census tracts.
+</p>
+
+</section>
+
+<div class='tableauPlaceholder' id='viz1491886344478' style='position: relative'>
+    <noscript>
+        <a href='#'><img alt=' ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;da&#47;data_load_manual&#47;Dashboard1&#47;1_rss.png' style='border: none' />
+        </a>
+    </noscript>
+    <object class='tableauViz' style='display:none;'>
+        <param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' />
+        <param name='site_root' value='' />
+        <param name='name' value='data_load_manual&#47;Dashboard1' />
+        <param name='tabs' value='yes' />
+        <param name='toolbar' value='yes' />
+        <param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;da&#47;data_load_manual&#47;Dashboard1&#47;1.png' />
+        <param name='animate_transition' value='yes' />
+        <param name='display_static_image' value='yes' />
+        <param name='display_spinner' value='yes' />
+        <param name='display_overlay' value='yes' />
+        <param name='display_count' value='yes' />
+    </object>
+</div>
+<script type='text/javascript'>
+    var divElement = document.getElementById('viz1491886344478');
+    var vizElement = divElement.getElementsByTagName('object')[0];
+    vizElement.style.width = '1004px';
+    vizElement.style.height = '895px';
+    var scriptElement = document.createElement('script');
+    scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';
+    vizElement.parentNode.insertBefore(scriptElement, vizElement);
+</script>
+
+
+  <div class='tableauPlaceholder' id='viz1491885997815' style='position: relative'>
+    <noscript>
+        <a href='#'><img alt=' ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;da&#47;data_load_manual&#47;Sheet1&#47;1_rss.png' style='border: none' />
+        </a>
+    </noscript>
+    <object class='tableauViz' style='display:none;'>
+        <param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' />
+        <param name='site_root' value='' />
+        <param name='name' value='data_load_manual&#47;Sheet1' />
+        <param name='tabs' value='yes' />
+        <param name='toolbar' value='yes' />
+        <param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;da&#47;data_load_manual&#47;Sheet1&#47;1.png' />
+        <param name='animate_transition' value='yes' />
+        <param name='display_static_image' value='yes' />
+        <param name='display_spinner' value='yes' />
+        <param name='display_overlay' value='yes' />
+        <param name='display_count' value='yes' />
+    </object>
+</div>
+<script type='text/javascript'>
+    var divElement = document.getElementById('viz1491885997815');
+    var vizElement = divElement.getElementsByTagName('object')[0];
+    vizElement.style.width = '100%';
+    vizElement.style.height = (divElement.offsetWidth * 0.75) + 'px';
+    var scriptElement = document.createElement('script');
+    scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';
+    vizElement.parentNode.insertBefore(scriptElement, vizElement);
+</script>
+
+<div class='tableauPlaceholder' id='viz1491886129677' style='position: relative'>
+    <noscript>
+        <a href='#'><img alt=' ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;da&#47;data_load_manual&#47;Multiples_v1&#47;1_rss.png' style='border: none' />
+        </a>
+    </noscript>
+    <object class='tableauViz' style='display:none;'>
+        <param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' />
+        <param name='site_root' value='' />
+        <param name='name' value='data_load_manual&#47;Multiples_v1' />
+        <param name='tabs' value='yes' />
+        <param name='toolbar' value='yes' />
+        <param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;da&#47;data_load_manual&#47;Multiples_v1&#47;1.png' />
+        <param name='animate_transition' value='yes' />
+        <param name='display_static_image' value='yes' />
+        <param name='display_spinner' value='yes' />
+        <param name='display_overlay' value='yes' />
+        <param name='display_count' value='yes' />
+    </object>
+</div>
+<script type='text/javascript'>
+    var divElement = document.getElementById('viz1491886129677');
+    var vizElement = divElement.getElementsByTagName('object')[0];
+    vizElement.style.width = '100%';
+    vizElement.style.height = (divElement.offsetWidth * 0.75) + 'px';
+    var scriptElement = document.createElement('script');
+    scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';
+    vizElement.parentNode.insertBefore(scriptElement, vizElement);
+</script>
+
+
+
+</body>
+</html>
