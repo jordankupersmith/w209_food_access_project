@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+	
+    <title>W209 USDA Food Access</title>
+
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <style type="text/css">
+    </style>
+
+
+    <!-- Bootstrap -->
+    <link href="bootstrap-3.3.7-dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="bootstrap-3.3.7-dist/css/bootstrap-theme.min.css" rel="stylesheet">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css" rel="stylesheet"/>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+</head>
+<body>
+
+  <div class="jumbotron">
+    <div class="container">
+        <h1>Atlas for USDA Food Access Indicators</h2>
+	<h2>W209 Section 3 - Final Project</h2>
+	<p><a id="collapsible" class="btn btn-primary btn-lg" data-toggle="collapse" data-target="#projectinfo" role="button">Learn more &raquo;</a></p>
+    </div>
+  </div>
+ 
+  <div class="container">
+    <div id="projectinfo" class="collapse"> 
+	<p>Through Food Access Research Atlas, the United States Department of Agriculture (USDA) provides a spatial view of food access data for low-income and other census tracts with various indicators based on income, ethnicity, age groups etc for census tracts, using different measures of supermarket accessibility. Aggregated data is available in the public domain.</p>
+	<p>In it's current state, the Atlas is limited to key features exposed by the USDA, so our project concept is twofold - the first part is to extend the functionality provided by the Atlas and make it easier to compare and contrast various features that are already available in the dataset but not easy to interpret or not available in the Atlas and the second part is to overlay existing data with external data in the education and health domain to visualize the relationships between these new datasets in conjunction with the existing data for various census tracts.</p>
+    </di>
+  </div>
+
+  <nav class="navbar navbar-default" role="navigation"> 
+	<div class="navbar-header"> 
+		<a class="navbar-brand" href="#">Choose Dashboard</a> 
+	</div> 
+	<div> 
+		<ul class="nav navbar-nav"> 
+			<li class="active"><a href="#dashboard_1">Dashboard 1 (Statistics by State)</a></li> 
+			<li><a href="#dashboard_2">Dashboard 2 (Small multiples)</a></li> 
+		</ul>
+	</div>
+  </nav>
+
+ 
+  <script type='text/javascript'>
+	$(document).ready(function(){
+	 $('#collapsible').on('click', function () {
+	  var text=$('#collapsible').text();
+	  if(text.startsWith("Learn more")){
+	    $(this).text('Show less');
+	  } else{
+	    $(this).html('Learn more &raquo;');
+	 }
+	});
+	});
+  </script>
+  
+  <div class="container" id="dashboard_1">
+    <div class="row">
+<div class='tableauPlaceholder' id='viz1492474663830' style='position: relative'><noscript><a href='#'><img alt='Dashboard 1 ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;da&#47;dashboard1zoomincountyhsgraduationrate&#47;Dashboard1&#47;1_rss.png' style='border: none' /></a></noscript><object class='tableauViz'  style='display:none;'><param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' /> <param name='site_root' value='' /><param name='name' value='dashboard1zoomincountyhsgraduationrate&#47;Dashboard1' /><param name='tabs' value='no' /><param name='toolbar' value='no' /><param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;da&#47;dashboard1zoomincountyhsgraduationrate&#47;Dashboard1&#47;1.png' /> <param name='animate_transition' value='yes' /><param name='display_static_image' value='yes' /><param name='display_spinner' value='yes' /><param name='display_overlay' value='yes' /><param name='display_count' value='yes' /></object></div>                <script type='text/javascript'>                    var divElement = document.getElementById('viz1492474663830');                    var vizElement = divElement.getElementsByTagName('object')[0];                    vizElement.style.width='1004px';vizElement.style.height='869px';                    var scriptElement = document.createElement('script');                    scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';                    vizElement.parentNode.insertBefore(scriptElement, vizElement);                </script>
+    </div>
+  </div>
+
+  <div class="container" id="dashboard_2">
+    <div class="row">
+      <div class="col-lg-6">
+<div class='tableauPlaceholder' id='viz1492463724071' style='position: relative'><noscript><a href='#'><img alt='Household without vehicle ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;tr&#47;tractdataoverlayno_vehicle&#47;Householdwithoutvehicle&#47;1_rss.png' style='border: none' /></a></noscript><object class='tableauViz'  style='display:none;'><param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' /> <param name='site_root' value='' /><param name='name' value='tractdataoverlayno_vehicle&#47;Householdwithoutvehicle' /><param name='tabs' value='no' /><param name='toolbar' value='no' /><param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;tr&#47;tractdataoverlayno_vehicle&#47;Householdwithoutvehicle&#47;1.png' /> <param name='animate_transition' value='yes' /><param name='display_static_image' value='yes' /><param name='display_spinner' value='yes' /><param name='display_overlay' value='yes' /><param name='display_count' value='yes' /></object></div>                <script type='text/javascript'>                    var divElement = document.getElementById('viz1492463724071');                    var vizElement = divElement.getElementsByTagName('object')[0];                    vizElement.style.width='100%';vizElement.style.height=(divElement.offsetWidth*0.75)+'px';                    var scriptElement = document.createElement('script');                    scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';                    vizElement.parentNode.insertBefore(scriptElement, vizElement);                </script>
+      </div>
+      <div class="col-lg-6">
+<div class='tableauPlaceholder' id='viz1492464478017' style='position: relative'><noscript><a href='#'><img alt='High School non-Graduation ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;tr&#47;tractdataoverlayhighschoolnone-graduation&#47;HighSchoolnon-Graduation&#47;1_rss.png' style='border: none' /></a></noscript><object class='tableauViz'  style='display:none;'><param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' /> <param name='site_root' value='' /><param name='name' value='tractdataoverlayhighschoolnone-graduation&#47;HighSchoolnon-Graduation' /><param name='tabs' value='no' /><param name='toolbar' value='no' /><param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;tr&#47;tractdataoverlayhighschoolnone-graduation&#47;HighSchoolnon-Graduation&#47;1.png' /> <param name='animate_transition' value='yes' /><param name='display_static_image' value='yes' /><param name='display_spinner' value='yes' /><param name='display_overlay' value='yes' /><param name='display_count' value='yes' /></object></div>                <script type='text/javascript'>                    var divElement = document.getElementById('viz1492464478017');                    var vizElement = divElement.getElementsByTagName('object')[0];                    vizElement.style.width='100%';vizElement.style.height=(divElement.offsetWidth*0.75)+'px';                    var scriptElement = document.createElement('script');                    scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';                    vizElement.parentNode.insertBefore(scriptElement, vizElement);                </script>
+      </div>
+    </div> 
+  </div>
+
+  <hr/>
+
+  <footer class="bd-footer text-muted">
+  <div class="footer-social">
+    <div class="container text-center">
+	<ul class="list-inline">
+	<li class="list-inline-item social-github">
+	<a href="https://github.com/blackrockdigital"><i class="fa fa-github"></i></a>
+	</li>
+	<li class="list-inline-item social-twitter">
+	<a href="https://twitter.com/sbootstrap"><i class="fa fa-twitter"></i></a>
+	</li>
+	<li class="list-inline-item social-facebook">
+	<a href="https://www.facebook.com/StartBootstrap/"><i class="fa fa-facebook"></i></a>
+	</li>
+	<li class="list-inline-item social-google-plus">
+	<a href="https://plus.google.com/+Startbootstrap"><i class="fa fa-google-plus"></i></a>
+	</li>
+	</ul>
+    </div>
+  </div>
+  
+  <div class="footer-main">
+    <div class="container text-center">
+	    Designed and maintained by <a href="mailto:jmkupe@ischool.berkeley.edu">Jordan Kupersmith</a>, <a href="mailto:yuhang.zhao@berkeley.edu">Yuhang Zhao</a>, and <a href="mailto:ravneetghuman@ischool.berkeley.edu">Ravneet Ghuman</a>.
+    </div>
+  </div>
+  </footer>
+
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
+
+</body>
+</html>
