@@ -4,6 +4,7 @@ getwd()
 library(plyr)
 library(dplyr)
 library(car)
+library(sqldf)
 
 MyData <- read.csv(file="merged_data.csv", header=TRUE, sep=",")
 names(MyData)[names(MyData)=="uninsured._rate"] <- "uninsured_rate"
@@ -68,9 +69,10 @@ finalData<-cbind(DataGrouping, columnnumber)
 
 finalData$rownumber<-recode(finalData$Urban,"0=2")
 
+varlist_reduced<-c("uninsured_rate","Urban","CensusTractString","did_not_graduate_hs","countyName","percent_with_pub_assist","PovertyRate", "EP_AGE65" ,  "groupingvar" , "State" , "County")    
 
-
-write.csv(finalData, "final_data.csv", row.names = FALSE, na="")
+finalDataReduced<-finalData[varlist_reduced]
+write.csv(finalDataReduced, "final_data.csv", row.names = FALSE, na="")
 
 
 
