@@ -28,15 +28,30 @@
     <div class="container">
         <h1>Atlas for USDA Food Access Indicators</h2>
 	<h2>W209 Section 3 - Final Project</h2>
-	<p><a id="collapsible" class="btn btn-primary btn-lg" data-toggle="collapse" data-target="#projectinfo" role="button">Learn more &raquo;</a></p>
+	<p>
+		<a id="collapsible" class="btn btn-primary btn-lg" data-toggle="collapse" data-target="#projectinfo" role="button">Learn more about project &raquo;</a>
+		<a id="collapsible1" class="btn btn-primary btn-lg" data-toggle="collapse" data-target="#howtouse" role="button">How to use the tool &raquo;</a>
+		<a id="collapsible2" class="btn btn-primary btn-lg" data-toggle="collapse" data-target="#howtointerpret" role="button">How to interpret result &raquo;</a>
+	</p>
     </div>
   </div>
  
   <div class="container">
-    <div id="projectinfo" class="collapse"> 
-	<p>Through Food Access Research Atlas, the United States Department of Agriculture (USDA) provides a spatial view of food access data for low-income and other census tracts with various indicators based on income, ethnicity, age groups etc for census tracts, using different measures of supermarket accessibility. Aggregated data is available in the public domain.</p>
-	<p>In it's current state, the Atlas is limited to key features exposed by the USDA, so our project concept is twofold - the first part is to extend the functionality provided by the Atlas and make it easier to compare and contrast various features that are already available in the dataset but not easy to interpret or not available in the Atlas, and the second part is to overlay existing data with external data in the education and health domain to visualize the relationships between these new datasets in conjunction with the existing data for various census tracts.</p>
-    </di>
+    <div id="projectinfo" class="collapse">
+	<h3>Project Info <a href="#"><span class="glyphicon glyphicon-remove-circle" data-toggle="collapse" data-target="#projectinfo"></span></a></h3>
+	<p>Through Food Access Research Atlas, the United States Department of Agriculture (USDA) provides a spatial view of food access data for low-income and other census tracts with indicators based on income, ethnicity, and other demographic information for census tracts, along with different measures for supermarket accessibility. Aggregated data is available in the public domain and is available here:</p>
+	<a href="https://www.ers.usda.gov/data-products/food-environment-atlas/go-to-the-atlas/">https://www.ers.usda.gov/data-products/food-environment-atlas/go-to-the-atlas/</a>
+	<p>In this visualization, we have enhanced the food atlas by providing a more detailed map that analyzes more census data and provides a more analytical perspective to allow the user to understand the relationship between food deserts and key demographic census indicators on the census tract level. There are more than 72,000 census tracts in the United States and each tract is comprised of 5,000-8,000 people.</p> 
+
+    </div>
+    <div id="howtouse" class="collapse">
+	<h3>How to use the tool <a href="#"><span class="glyphicon glyphicon-remove-circle" data-toggle="collapse" data-target="#howtouse"></span></a></h3>
+	<p>Use the blue maps as a way to zoom and pan the other maps to the desired geography. First click on your desired state in the blue map and you will see the maps of census data zoom to the state that you selected. If you desire to zoom into the county level, click on your desired county. To clear the zoom, first click on a county other than county that was selected on the blue map. Follow this action by clicking on a state other than the state that was selected on the blue map. This will reset the maps of data back to the national level zoom.</p>
+    </div>
+    <div id="howtointerpret" class="collapse">
+	<h3>How to interpret result <a href="#"><span class="glyphicon glyphicon-remove-circle" data-toggle="collapse" data-target="#howtointerpret"></span></a></h3>
+	<p>The first map displayed is simply a map of the census variable by tract for the entire country. This map is followed by 4 maps with different “low access” filters applied. Low access is defined as a census tract that does not have a supermarket with nutritious food within the mileage indicated in the charts. The user is invited to look for patterns of key census indicators in different tracts.</p>
+    </div>
   </div>
 
   <nav class="navbar navbar-default" role="navigation"> 
@@ -52,19 +67,33 @@
 	</div>
   </nav>
 
- 
+<!-- 
   <script type='text/javascript'>
 	$(document).ready(function(){
 	 $('#collapsible').on('click', function () {
 	  var text=$('#collapsible').text();
-	  if(text.startsWith("Learn more")){
-	    $(this).text('Show less');
-	  } else{
-	    $(this).html('Learn more &raquo;');
-	 }
+	  if(text.startsWith("Learn more about project")){
+	    $(this).text('Minimize Project Info');
+	  };
+	  if(text.startsWith("Minimize project info")){
+	    $(this).text('Learn more about project');
+	  };
+	  if(text.startsWith("How to use the tool")){
+	    $(this).text('Minimize tool info');
+	  };
+	  if(text.startsWith("Minimize tool info")){
+	    $(this).text('How to use the tool');
+	  };
+	  if(text.startsWith("How to interpret result")){
+	    $(this).text('Minimize result interpretation');
+	  };
+	  if(text.startsWith("Minimize result interpretation")){
+	    $(this).text('How to interpret result');
+	  };
 	});
 	});
   </script>
+-->
   
   <div class="container" id="dashboard_1">
     <div class="row">
